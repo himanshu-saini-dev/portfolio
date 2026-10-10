@@ -3,10 +3,12 @@
     margin: 0;
     padding: 0;
 }
+
 :root {
     --primary-color: #589dd6;
     --secondary-color: #f4f4f4;
     --text-color: #333;
+    --text-color-light: #666;
     --font-family: 'Arial', sans-serif;
     --bg-color: #fff;
 }
@@ -18,16 +20,20 @@ body {
     line-height: 1.6;
     padding: 20px;
 }
+
 main {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem 1rem;
 }
+
 header {
     text-align: center;
     margin-bottom: 2rem;
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--bg-color);
 }
+
 nav ul {
     list-style: none;
     display: flex;
@@ -35,8 +41,47 @@ nav ul {
     gap: 1.5rem;
     margin-bottom: 2rem;
 }
+
 nav a {
     text-decoration: none;
     color: var(--primary-color);
     font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: var(--text-color-light);
+}
+
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+#projects h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+article {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+article :hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+    transition: transform 0.2s;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+li {
+    border-radius: 20px
 }
