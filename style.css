@@ -70,6 +70,7 @@ article {
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 article:hover {
@@ -81,10 +82,13 @@ article:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    list-style: none;
 }
 
 #skills li {
-    border-radius: 20px
+    border-radius: 20px;
+    padding: 0.3rem 0.9rem;
+    background: var(--secondary-color);
 }
 
 form {
@@ -120,8 +124,9 @@ button {
     cursor: pointer;
     font-weight: bold;
 }
+
 button:hover {
-    background-color: darken(var(--primary-color), 10%);
+    background-color: rgba(12, 61, 94, 0.9);
 }
 
 @media (max-width: 600px) {
@@ -129,9 +134,11 @@ button:hover {
         flex-direction: column;
         gap: 0.5rem;
     }
+
     body {
         padding: 10px;
     }
+
     h1 {
         font-size: 1.5rem;
     }
