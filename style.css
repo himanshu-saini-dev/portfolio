@@ -32,6 +32,7 @@ header {
     margin-bottom: 2rem;
     background-color: var(--primary-color);
     color: var(--bg-color);
+    padding: 1rem;
 }
 
 nav ul {
@@ -71,17 +72,67 @@ article {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-article :hover {
+article:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transform: translateY(-4px);
-    transition: transform 0.2s;
 }
 
-ul {
+#skills ul {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
-li {
+
+#skills li {
     border-radius: 20px
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 500px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font: inherit;
+    font-family: var(--font-family);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--primary-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    body {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
 }
