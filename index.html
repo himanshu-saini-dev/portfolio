@@ -130,18 +130,35 @@
             <p>Have a role or project in mind? Send me a message.</p>
             <form>
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" minlength="3" required>
+                <input type="text" id="name" name="name" minlength="3" maxlength="50" autocomplete="name" required>
+
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="Reason">Reason:</label>
-                <select id="Reason" name="Reason" required>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+
+                <label for="phone">Phone (optional):</label>
+                <input type="tel" id="phone" name="phone" pattern="[6-9][0-9]{9}"
+                    title="10-digit Indian mobile number starting with 6, 7, 8 or 9" autocomplete="tel">
+
+                <label for="reason">Reason:</label>
+                <select id="reason" name="reason" required>
                     <option value="" disabled selected>Choose a reason</option>
-                    <option value="Job opportunity">Job opportunity</option>
-                    <option value="Freelance project">Freelance project</option>
-                    <option value="Other">Other</option>
+                    <option value="job">Job opportunity</option>
+                    <option value="freelance">Freelance project</option>
+                    <option value="other">Other</option>
                 </select>
+
+                <fieldset>
+                    <legend>Preferred reply by</legend>
+                    <label><input type="radio" name="reply" value="email" checked> Email</label>
+                    <label><input type="radio" name="reply" value="phone"> Phone</label>
+                </fieldset>
+
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <textarea id="message" name="message" rows="5" minlength="10" maxlength="500" required></textarea>
+
+                <label><input type="checkbox" name="consent" required> I agree to be contacted about this
+                    message.</label>
+
                 <button type="submit">Send</button>
             </form>
         </section>
