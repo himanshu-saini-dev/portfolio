@@ -91,6 +91,10 @@ article:hover {
     background: var(--secondary-color);
 }
 
+/* ====================================
+   FORM STYLING (FIXED)
+   ==================================== */
+
 form {
     display: flex;
     flex-direction: column;
@@ -98,7 +102,10 @@ form {
     max-width: 500px;
 }
 
-input,
+/* Sirf text, email, tel, select aur textarea par width 100% lagegi */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
 select,
 textarea {
     width: 100%;
@@ -108,6 +115,59 @@ textarea {
     font: inherit;
     font-family: var(--font-family);
 }
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--primary-color);
+}
+
+/* Radio aur Checkbox ke liye specific clean rules */
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Fieldset and Radio alignment */
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 4px 0;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+fieldset legend {
+    padding: 0 4px;
+    font-size: 0.9rem;
+}
+
+fieldset label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+/* Checkbox label alignment */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+/* ====================================
+   BUTTONS & REST OF PAGE
+   ==================================== */
 
 button {
     background-color: var(--primary-color);
@@ -123,19 +183,10 @@ button:hover {
     background-color: rgba(12, 61, 94, 0.9);
 }
 
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    body {
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+    border: 2px solid #d33;
 }
 
 table {
@@ -165,14 +216,17 @@ figure img {
     height: auto;
 }
 
-input:user-invalid,
-select:user-invalid,
-textarea:user-invalid {
-    border: 2px solid #d33;
-}
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 
-fieldset {
-    border: 1px solid #ccc;
-    padding: 8px 12px;
-    margin: 8px 0;
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
 }
