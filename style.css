@@ -5,7 +5,7 @@
 }
 
 :root {
-    --primary-color: #589dd6;
+    --primary-color: #2b6cb0;
     --secondary-color: #f4f4f4;
     --text-color: #333;
     --text-color-light: #666;
@@ -230,3 +230,6 @@ figure img {
         font-size: 1.5rem;
     }
 }
+
+.skip-link { position: absolute; left: -9999px; }
+.skip-link:focus { left: 16px; top: 16px; background: #fff; color: #000; padding: 8px 12px; z-index: 10; }
