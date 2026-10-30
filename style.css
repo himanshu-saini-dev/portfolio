@@ -233,3 +233,6 @@ figure img {
 
 .skip-link { position: absolute; left: -9999px; }
 .skip-link:focus { left: 16px; top: 16px; background: #fff; color: #000; padding: 8px 12px; z-index: 10; }
+.card-link { color: var(--primary-color); font-weight: bold; text-decoration: none; margin-right: 12px; }
+.card-link:hover { text-decoration: underline; }
+.card-link:focus-visible { outline: 2px solid var(--primary-color); outline-offset: 2px; }
